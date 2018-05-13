@@ -8,7 +8,6 @@ source("https://raw.githubusercontent.com/liyujiao1026/pmediansolvers/master/Fun
 source("https://raw.githubusercontent.com/liyujiao1026/pmediansolvers/master/Func6_compare.R")
 
 
-
 # 1. Read IKEA data ===================================================#
 library(h5)
 loadhdf5data <- function(h5File, dataset) {
@@ -22,7 +21,7 @@ loadhdf5data <- function(h5File, dataset) {
             data
 }
 
-setwd("~/Desktop/pmedian_uploadR/pmedian_R/")
+
 
 Distance.matrix <- loadhdf5data("./data/PHD_MatrixDist.h5", "matrix")
 # #List of Settlements (X,Y, ID of node). 1938 lines
@@ -69,7 +68,7 @@ FISH_try_number <- 5
 
 
 # 2. Running algorithms---------------------------------------#
-result_path_save <- "./Results/"
+
 
 result_compare <- Compare_Algorithm_Func(
             N,p,ni,pop_size,
