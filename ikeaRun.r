@@ -1,3 +1,6 @@
+setwd("./")
+result_path_save <-  "./"
+
 source("https://raw.githubusercontent.com/liyujiao1026/pmediansolvers/master/Func1_SA.R")
 source("https://raw.githubusercontent.com/liyujiao1026/pmediansolvers/master/Func2_GA.R")
 source("https://raw.githubusercontent.com/liyujiao1026/pmediansolvers/master/Func3_PSO.R")
