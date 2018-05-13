@@ -6,16 +6,14 @@ source("https://raw.githubusercontent.com/liyujiao1026/pmediansolvers/master/Fun
 source("https://raw.githubusercontent.com/liyujiao1026/pmediansolvers/master/Func5_Fish.R")
 source("https://raw.githubusercontent.com/liyujiao1026/pmediansolvers/master/Func6_compare.R")
 
-path_save <- "~/Desktop/"
+result_path_save <- "~/Desktop/"
 #---------------------------------------------#
 
 
 
 
 
-# 1. Settings ---------------------------------------#
-set.seed(1)
-# 1. P-median problem settings
+# # 1. P-median problem settings
 N <- 193 # Number of candidates
 p <- 5 # Number of facilities
 n_costomers <- 187 # Number of customer buildings
@@ -25,8 +23,9 @@ n_costomers <- 187 # Number of customer buildings
 ni <- 40 # Number of iterations
 pop_size <- 50
 
-
-# 3. Parameters settings
+# 
+# # 3. Parameters settings
+algorithms <- c("SA","GA","PSO","BEE","FISH")
 SA_temparature <- 500 # better the same as iteration time
 SA_cool_rate <- 0.95
 
@@ -54,11 +53,10 @@ Distance.matrix <- matrix(rnorm(n = n_costomers*N,mean = 100,sd = 10), nrow = n_
 result_compare <- Compare_Algorithm_Func(
             N,p,ni,pop_size,
             Distance.matrix, weight_customer,
+            algorithms = c("SA","BEE"),
             SA_temparature,  SA_cool_rate,
             GA_prob_refine,  GA_prob_cross,GA_prob_mutation,
             PSO_c1, PSO_c2,
             BEE_maxtrial,
             FISH_crowdness, FISH_visual_mutual, FISH_try_number,
-            path_save = path_save)
-
-plotFun(result_compare)
+            path_save = result_path_save)
