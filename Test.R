@@ -1,11 +1,12 @@
 rm(list = ls())
-source("./Algorithm_source/Func1_SA.R")
-source("./Algorithm_source/Func2_GA.R")
-source("./Algorithm_source/Func3_PSO.R")
-source("./Algorithm_source/Func4_Bee.R")
-source("./Algorithm_source/Func5_Fish.R")
-source("./Algorithm_source/Func6_compare.R")
+source("https://raw.githubusercontent.com/liyujiao1026/pmediansolvers/master/Func1_SA.R")
+source("https://raw.githubusercontent.com/liyujiao1026/pmediansolvers/master/Func2_GA.R")
+source("https://raw.githubusercontent.com/liyujiao1026/pmediansolvers/master/Func3_PSO.R")
+source("https://raw.githubusercontent.com/liyujiao1026/pmediansolvers/master/Func4_Bee.R")
+source("https://raw.githubusercontent.com/liyujiao1026/pmediansolvers/master/Func5_Fish.R")
+source("https://raw.githubusercontent.com/liyujiao1026/pmediansolvers/master/Func6_compare.R")
 
+path_save <- "~/Desktop/"
 #---------------------------------------------#
 
 
@@ -49,8 +50,7 @@ FISH_try_number <- 5
 weight_customer <- rpois(n = n_costomers, lambda = 30) # Number of people for each customer building
 Distance.matrix <- matrix(rnorm(n = n_costomers*N,mean = 100,sd = 10), nrow = n_costomers)
 
-path_save <- "~/Desktop/"
-#path_save <- "./"
+
 result_compare <- Compare_Algorithm_Func(
             N,p,ni,pop_size,
             Distance.matrix, weight_customer,
